@@ -15,7 +15,7 @@ import id.gits.gitsmvvmkotlin.util.obtainViewModel
 import id.gits.gitsmvvmkotlin.util.replaceFragmentInActivity
 import kotlinx.android.synthetic.main.toolbar.*
 
-class MainActivity : BaseActivity(), MainItemUserActionListener {
+class MainActivity : BaseActivity() {
 
     private lateinit var viewModel: MainViewModel
 
@@ -24,17 +24,7 @@ class MainActivity : BaseActivity(), MainItemUserActionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        setupToolbar()
         setupFragment()
-        setupViewModel()
-    }
-
-    /**
-     * Do setup toolbar app
-     */
-    private fun setupToolbar() {
-        setSupportActionBar(toolbar)
-        txt_toolbar_title.text = "CGV Movie Update"
     }
 
     /**
@@ -45,22 +35,6 @@ class MainActivity : BaseActivity(), MainItemUserActionListener {
         MainFragment.newInstance().let {
             replaceFragmentInActivity(it, R.id.frame_main_content)
         }
-    }
-
-    private fun setupViewModel() {
-        viewModel = obtainViewModel().apply {
-
-            openDetailMovie.observe(this@MainActivity, Observer { movie ->
-                onMovieClicked(movie!!)
-            })
-        }
-    }
-
-    override fun onMovieClicked(movie: Movie) {
-        var intent = Intent(this@MainActivity, MainDetailActivity::class.java)
-        intent.putExtra("movieId", movie.id!!)
-
-        startActivity(intent)
     }
 
     fun obtainViewModel(): MainViewModel = obtainViewModel(MainViewModel::class.java)

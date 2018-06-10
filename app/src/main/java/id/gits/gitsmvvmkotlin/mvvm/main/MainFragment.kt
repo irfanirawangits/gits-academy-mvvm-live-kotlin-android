@@ -42,7 +42,6 @@ class MainFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        viewBinding.viewModel?.start()
     }
 
     /**

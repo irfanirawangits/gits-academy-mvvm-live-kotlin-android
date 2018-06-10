@@ -1,17 +1,13 @@
 package id.gits.gitsmvvmkotlin.mvvm.maindetail
 
-import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.google.gson.Gson
+import id.gits.gitsmvvmkotlin.base.BaseFragment
 import id.gits.gitsmvvmkotlin.databinding.MainDetailFragmentBinding
 
-class MainDetailFragment : Fragment() {
+class MainDetailFragment : BaseFragment() {
 
     private lateinit var viewBinding: MainDetailFragmentBinding
 
@@ -26,13 +22,10 @@ class MainDetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        val movieId = arguments.getInt("movieId")
-        viewBinding.viewModel!!.getMovieById(movieId)
     }
 
     companion object {
-        fun newInstance(movieId: Int) : MainDetailFragment {
+        fun newInstance(movieId: Int): MainDetailFragment {
             val args = Bundle()
 
             args.putInt("movieId", movieId)

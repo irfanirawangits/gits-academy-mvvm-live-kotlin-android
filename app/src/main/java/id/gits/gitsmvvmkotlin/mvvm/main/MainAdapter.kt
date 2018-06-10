@@ -19,7 +19,7 @@ class MainAdapter(private var movies: List<Movie>, private var mainViewModel: Ma
 
         val userActionListener = object : MainItemUserActionListener {
             override fun onMovieClicked(movie: Movie) {
-                mainViewModel.openDetailMovie.value = movie
+
             }
         }
 

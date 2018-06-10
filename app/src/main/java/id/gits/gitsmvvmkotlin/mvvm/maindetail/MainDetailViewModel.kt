@@ -17,18 +17,6 @@ class MainDetailViewModel(context: Application, private val gitsRepository: Gits
     var movieImageBackdropUrl = MutableLiveData<String>()
 
     fun getMovieById(movieId: Int){
-        gitsRepository.getMovieById(movieId, object : GitsDataSource.GetMoviesByIdCallback{
-            override fun onMovieLoaded(movie: Movie) {
-                movieTitle.value = movie.title
-                movieRating.value = movie.vote_average.toString()
-                movieDescription.value = movie.overview
-                movieDateRelease.value = movie.release_date
-                movieImageBackdropUrl.value = "http://image.tmdb.org/t/p/w500${movie.backdrop_path}"
-            }
 
-            override fun onError(errorMessage: String?) {
-                errorMessageToast.value = errorMessage
-            }
-        })
     }
 }
