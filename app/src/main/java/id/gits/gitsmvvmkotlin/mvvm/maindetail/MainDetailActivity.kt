@@ -25,11 +25,9 @@ class MainDetailActivity : BaseActivity() {
                     or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
         }
 
-        val movieId = intent.getIntExtra("movieId", 0)
-
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainDetailFragment.newInstance(movieId))
+                    .replace(R.id.container, MainDetailFragment.newInstance(0))
                     .commitNow()
         }
 

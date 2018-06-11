@@ -18,8 +18,6 @@ class MainFragment : BaseFragment() {
 
     private lateinit var mainAdapter: MainAdapter
 
-    //==============================================================================================
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         viewBinding = MainFragmentBinding.inflate(inflater!!, container, false).apply {
             viewModel = (activity as MainActivity).obtainViewModel()
@@ -37,24 +35,10 @@ class MainFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        setupMovies()
     }
 
     override fun onResume() {
         super.onResume()
-    }
-
-    /**
-     * Do setup movie list to recyclerview after getting data from API
-     */
-    private fun setupMovies() {
-        val viewModel = viewBinding.viewModel
-
-        if (viewModel != null) {
-            mainAdapter = MainAdapter(ArrayList(), viewModel)
-
-            viewBinding.recyclerviewMain.adapter = mainAdapter
-        }
     }
 
     companion object {

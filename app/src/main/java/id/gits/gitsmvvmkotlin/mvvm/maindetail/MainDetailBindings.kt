@@ -9,14 +9,4 @@ import id.gits.gitsmvvmkotlin.R
 
 object MainDetailBindings {
 
-    @BindingAdapter("android:imageSource")
-    @JvmStatic
-    fun setImageSource(imageView: ImageView, urlSource: String) {
-        if (!TextUtils.isEmpty(urlSource)) {
-            Picasso.with(imageView.context)
-                    .load(urlSource)
-                    .error(R.color.colorAccent)
-                    .into(imageView)
-        }
-    }
 }

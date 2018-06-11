@@ -15,15 +15,7 @@ import id.gits.gitsmvvmkotlin.databinding.MainItemBinding
 class MainAdapter(private var movies: List<Movie>, private var mainViewModel: MainViewModel) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-        val item = movies[position]
 
-        val userActionListener = object : MainItemUserActionListener {
-            override fun onMovieClicked(movie: Movie) {
-
-            }
-        }
-
-        (holder as MainItemHolder).bindItem(item, userActionListener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
@@ -46,14 +38,6 @@ class MainAdapter(private var movies: List<Movie>, private var mainViewModel: Ma
     }
 
     class MainItemHolder(itemView: MainItemBinding) : RecyclerView.ViewHolder(itemView.root) {
-        private val mainItemBinding = itemView
 
-        //==========================================================================================
-
-        fun bindItem(movie: Movie, userActionListener: MainItemUserActionListener) {
-            mainItemBinding.item = movie
-            mainItemBinding.userActionListener = userActionListener
-            mainItemBinding.executePendingBindings()
-        }
     }
 }

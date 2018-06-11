@@ -26,7 +26,7 @@ abstract class GitsAppDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context) =
                 Room.databaseBuilder(context.applicationContext,
-                        GitsAppDatabase::class.java, "Movies.db")
+                        GitsAppDatabase::class.java, "lorem")
                         .build()
     }
 }

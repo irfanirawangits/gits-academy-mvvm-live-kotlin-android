@@ -33,7 +33,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="240dp"
                         android:adjustViewBounds="true"
-                        android:imageSource="@{viewModel.movieImageBackdropUrl}"
                         android:scaleType="centerCrop" />
 
                     <View
@@ -64,7 +63,6 @@
                             android:paddingTop="4dp"
                             android:paddingRight="8dp"
                             android:paddingBottom="4dp"
-                            android:text="@{viewModel.movieDateRelease}"
                             android:textColor="@color/colorWhite"
                             android:textSize="12sp"
                             tools:text="Lorem" />
@@ -84,7 +82,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:includeFontPadding="false"
-                                android:text="@{viewModel.movieRating}"
                                 android:textColor="@color/colorWhite"
                                 android:textSize="28sp"
                                 tools:text="9.7" />
@@ -104,7 +101,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:lineSpacingExtra="4dp"
-                        android:text="@{viewModel.movieTitle}"
                         android:textColor="@color/colorWhite"
                         android:textSize="28sp"
                         tools:text="@string/app_name" />
@@ -125,7 +121,6 @@
                 android:lineSpacingExtra="2dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:text="@{viewModel.movieDescription}"
                 android:textSize="14sp"
                 tools:text="@string/app_name" />
         </LinearLayout>

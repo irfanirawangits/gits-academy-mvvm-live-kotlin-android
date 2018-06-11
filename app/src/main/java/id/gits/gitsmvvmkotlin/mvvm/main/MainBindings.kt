@@ -14,17 +14,4 @@ import id.gits.gitsmvvmkotlin.data.model.Movie
 
 object MainBindings {
 
-    @BindingAdapter("app:movieList")
-    @JvmStatic
-    fun setMovieList(recyclerView: RecyclerView, movies: MutableLiveData<List<Movie>>) {
-        try {
-            with(recyclerView.adapter as MainAdapter) {
-                if (movies.value?.isNotEmpty() == true) {
-                    replaceData(movies.value!!)
-                }
-            }
-        } catch (e: Exception){
-            e.printStackTrace()
-        }
-    }
 }

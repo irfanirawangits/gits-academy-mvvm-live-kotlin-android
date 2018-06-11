@@ -33,7 +33,8 @@ class ViewModelFactory private constructor(
     companion object {
 
         @SuppressLint("StaticFieldLeak")
-        @Volatile private var INSTANCE: ViewModelFactory? = null
+        @Volatile
+        private var INSTANCE: ViewModelFactory? = null
 
         fun getInstance(mApplication: Application) =
                 INSTANCE ?: synchronized(ViewModelFactory::class.java) {

@@ -18,7 +18,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="@{() -> userActionListener.onMovieClicked(item)}"
-        android:padding="16dp"
-        android:text="@{item.title}" />
+        android:padding="16dp" />
 </layout>
